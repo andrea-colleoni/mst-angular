@@ -1,0 +1,9 @@
+<h2>{{title}}</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of hs.getHeroes() | async" (click)="doClick(hero)" [class.select]="hero === clickedHero">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<app-hero-detail [hero]="clickedHero"></app-hero-detail>
+<p *ngIf="clickedHero else nohero">{{clickedHero.name}}</p>
+<ng-template #nohero><p>Nessuno</p></ng-template>

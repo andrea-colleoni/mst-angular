@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let s of strs">{{s}}</li>
+</ul>
+<input #testo>
+<button (click)="aggiungi(testo.value)">Clicca</button>
+<button (click)="rimuovi()">Stop</button>
