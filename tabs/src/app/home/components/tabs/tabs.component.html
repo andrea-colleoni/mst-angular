@@ -1,0 +1,12 @@
+<p-tabView #tv>
+  <p-tabPanel header="Home" [closable]="false">
+    <div>
+      <input #tabTitle>
+      <input #chkCloseable type="checkbox">
+      <button (click)="newTab(tabTitle.value, chkCloseable.checked)">Add</button>
+    </div>
+  </p-tabPanel>
+  <p-tabPanel *ngFor="let tab of tabs" [header]="tab?.title" [closable]="tab?.closeable">
+    <app-tab [dynamicComponent]="tab?.component"></app-tab>
+  </p-tabPanel>
+</p-tabView>
