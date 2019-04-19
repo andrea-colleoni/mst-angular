@@ -6,7 +6,12 @@
       <button (click)="newTab(tabTitle.value, chkCloseable.checked)">Add</button>
     </div>
   </p-tabPanel>
-  <p-tabPanel *ngFor="let tab of tabs" [header]="tab?.title" [closable]="tab?.closeable">
-    <app-tab [dynamicComponent]="tab?.component"></app-tab>
-  </p-tabPanel>
+  <!-- <p-tabPanel *ngFor="let tab of tabs" [header]="tab?.title" [closable]="tab?.closeable">
+
+  </p-tabPanel> -->
 </p-tabView>
+<ng-template #tab *appComponent="let component = component">
+    <app-tab [dynamicComponent]="component"></app-tab>
+</ng-template>
+
+

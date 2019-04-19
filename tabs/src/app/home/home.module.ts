@@ -7,9 +7,10 @@ import { PrimeUiModule } from '../prime-ui.module';
 import { TabComponent } from './components/tab/tab.component';
 import { TestCompComponent } from './components/test-comp/test-comp.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ComponentDirective } from './directives/component.directive';
 
 @NgModule({
-  declarations: [LayoutComponent, TabsComponent, TabComponent, TestCompComponent, MenuComponent, ],
+  declarations: [LayoutComponent, TabsComponent, TabComponent, TestCompComponent, MenuComponent, ComponentDirective, ],
   imports: [
     CommonModule,
     HomeRoutingModule,
