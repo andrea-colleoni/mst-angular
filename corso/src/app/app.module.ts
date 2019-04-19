@@ -10,6 +10,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PostsComponent } from './components/posts/posts.component';
 import { NgModule } from '@angular/core';
+import { PrimeUiModule } from './prime-ui.module';
+import { PostsTableComponent } from './components/posts-table/posts-table.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { NgModule } from '@angular/core';
     HeroDetailComponent,
     MessagesComponent,
     PostsComponent,
+    PostsTableComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    PrimeUiModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
