@@ -1,3 +1,4 @@
-<input #title placeholder="Titolo"><br>
+<input #title placeholder="Titolo"><input type="checkbox" #chkNewTab> Nuova tab? <br>
 <textarea #data placeholder="Dati"></textarea><br>
-<button (click)="addTab(title.value, data.value)">Aggiungi tab</button>
+<button (click)="addTab(title.value, chkNewTab.checked, data.value)">Aggiungi tab</button>
+<button (click)="back()">Back</button>

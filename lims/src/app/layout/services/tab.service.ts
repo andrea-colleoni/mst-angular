@@ -21,6 +21,12 @@ export class TabService {
     this.tabActions.next(tabAction);
   }
 
+  back(steps: number) {
+    this.tabActions.next({
+      back: steps
+    });
+  }
+
   get currentId() {
     return this._currentId;
   }

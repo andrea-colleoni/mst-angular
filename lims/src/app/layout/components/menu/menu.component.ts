@@ -15,18 +15,22 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTab(title: string, data: string) {
+  addTab(title: string, newTab: boolean, data: string) {
     this.ts.newTab(
       {
+        newTab: newTab,
+        closeable: true,
         tab:
         {
           title: title,
           tabId: this.ts.currentId,
-          closeable: true,
           data: JSON.parse(data),
         }
-      }
+      },
     );
   }
 
+  back() {
+    this.ts.back(1);
+  }
 }
