@@ -1,7 +1,8 @@
-<p>
-  comp2 works!
-</p>
-{{ tab.title | uppercase }}
-<form [formGroup]="testForm">
-  <input [(ngModel)]="tab.data.campo" formControlName="campo"> - {{tab.data.ts | date }}
-</form>
+<div>
+  {{ tab.title | uppercase }}
+  <form [formGroup]="testForm">
+    <input formControlName="campo"> - {{tab.data.ts | date }} <br>
+    Nome: <input formControlName="nome" id="nome"><br>
+    Cognome: <input formControlName="cognome" id="cognome">
+  </form>
+</div>

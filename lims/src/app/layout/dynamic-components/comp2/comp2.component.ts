@@ -1,31 +1,34 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { TabComponent } from '../../components/tab/tab.component';
-import { LimsTab } from '../../model/lims-tab';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { flushMicrotasks } from '@angular/core/testing';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TabbedComponent } from '../../model/tabbed-component';
 
 @Component({
   selector: 'lims-comp2',
   templateUrl: './comp2.component.html',
   styleUrls: ['./comp2.component.css']
 })
-export class Comp2Component implements OnInit {
+export class Comp2Component extends TabbedComponent implements OnInit {
 
-  tab: LimsTab;
   testForm: FormGroup;
 
   constructor(
-    private host: TabComponent,
+    _host: TabComponent,
     private formBuilder: FormBuilder,
-  ) { }
-
-  ngOnInit() {
-    this.tab = this.host.tab;
-    this.testForm = this.formBuilder.group({
-      campo: [this.tab.data.campo, [ Validators.required ]],
-    });
-
-    this.testForm.statusChanges.subscribe(sc => this.tab.dataChanged = true);
+  ) {
+    super(_host);
   }
 
+  ngOnInit() {
+    super.ngOnInit();
+    console.log('sub');
+    this.tab = this.host.tab;
+    this.testForm = this.formBuilder.group({
+      campo: [this.tab.data.campo, [Validators.required]],
+      nome: [this.tab.data.nome, [Validators.required]],
+      cognome: [this.tab.data.cognome, [Validators.required]],
+    });
+
+    this.testForm.statusChanges.subscribe(() => this.tab.dataChanged = true);
+  }
 }
