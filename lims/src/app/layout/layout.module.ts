@@ -7,14 +7,16 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TabComponent } from './components/tab/tab.component';
+import { DynamicComponentsModule } from './dynamic-components/dynamic-components.module';
 
 @NgModule({
-  declarations: [LayoutComponent, TabContainerComponent, MenuComponent, TabComponent],
+  declarations: [LayoutComponent, TabContainerComponent, MenuComponent, TabComponent, ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     RouterModule,
     FormsModule,
+    DynamicComponentsModule,
   ],
   entryComponents: [
     TabComponent,

@@ -9,11 +9,11 @@ import { LimsTab } from '../../model/lims-tab';
 export class TabComponent implements OnInit {
 
   @Input() tab: LimsTab;
+  dynamicComponent: any;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tab.data);
+    this.dynamicComponent = this.tab ? this.tab.component : undefined;
   }
-
 }

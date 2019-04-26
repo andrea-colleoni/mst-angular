@@ -55,6 +55,9 @@ export class TabContainerComponent implements OnInit {
 
   closeTab(ut: UiTab) {
     const ix = this.uiTabs.indexOf(ut);
+    if (ut.limsTabs.filter(t => t.dataChanged).length > 0) {
+      alert('ocio!');
+    }
     this.uiTabs.splice(ix, 1);
     this.showTab(this.uiTabs[0]);
   }
