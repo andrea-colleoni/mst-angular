@@ -1,0 +1,7 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li *ngFor="let t of tabs" class="nav-item">
+    <span class="nav-link" (click)="selectTab(t)">{{t.title}} <span *ngIf="t.closeable" (click)="closeTab(t)" class="tab-close">X</span></span>
+  </li>
+</ul>
+<div class="tab-content" #tabContent>
+</div>
